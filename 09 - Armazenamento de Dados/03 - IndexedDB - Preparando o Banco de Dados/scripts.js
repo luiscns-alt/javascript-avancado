@@ -56,7 +56,12 @@ const DB = {
     });
   },
   remove(id) {
-    return new Promise((resolve) => {});
+    return new Promise((resolve) => {
+      let request = getObjectStore().delete(id);
+      request.onsuccess = () => {
+        resolve(id);
+      };
+    });
   },
 };
 
