@@ -20,10 +20,22 @@ const DB = {
     });
   },
   find(id) {
-    return new Promise((resolve) => {});
+    return new Promise((resolve) => {
+      let request = getObjectStore().get(id);
+
+      request.onsuccess = () => {
+        resolve(request.result);
+      };
+    });
   },
   findAll() {
-    return new Promise((resolve) => {});
+    return new Promise((resolve) => {
+      let request = getObjectStore().getAll();
+
+      request.onsuccess = () => {
+        resolve(request.result);
+      };
+    });
   },
   insert(item) {
     return new Promise((resolve) => {
