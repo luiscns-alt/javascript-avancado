@@ -2,7 +2,7 @@ localStorage;
 
 localStorage.setItem("nome", "Luis");
 
-localStorage.getItem9("nome");
+localStorage.getItem("nome");
 
 let myObj = { nome: "luis" };
 
