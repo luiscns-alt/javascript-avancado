@@ -48,7 +48,12 @@ const DB = {
     });
   },
   update(item) {
-    return new Promise((resolve) => {});
+    return new Promise((resolve) => {
+      let request = getObjectStore().put(item);
+      request.onsuccess = () => {
+        resolve(item);
+      };
+    });
   },
   remove(id) {
     return new Promise((resolve) => {});
