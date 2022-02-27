@@ -26,7 +26,14 @@ const DB = {
     return new Promise((resolve) => {});
   },
   insert(item) {
-    return new Promise((resolve) => {});
+    return new Promise((resolve) => {
+      item.id = new Date().getTime();
+
+      let request = getObjectStore().add(item);
+      request.onsuccess = () => {
+        resolve(item);
+      };
+    });
   },
   update(item) {
     return new Promise((resolve) => {});
